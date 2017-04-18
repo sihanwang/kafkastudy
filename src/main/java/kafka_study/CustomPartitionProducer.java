@@ -15,7 +15,7 @@ public class CustomPartitionProducer {
 	public CustomPartitionProducer() {
 		Properties props = new Properties();
 		// Set the broker list for requesting metadata to find the lead broker
-		props.put("metadata.broker.list", "jing-server-3:9092");
+		props.put("metadata.broker.list", "pcdtckaf01d.emea1.cis.trcloud:6667,pcdtckaf02d.emea1.cis.trcloud:6667");
 		// This specifies the serializer class for keys
 		props.put("serializer.class", "kafka.serializer.StringEncoder");
 		// Defines the class to be used for determining the partition
@@ -31,7 +31,7 @@ public class CustomPartitionProducer {
 
 	public static void main(String[] args) {
 
-		String topic = "website-hits";
+		String topic = "streaming_test";
 		String count = "100";
 		int messageCount = Integer.parseInt(count);
 		System.out.println("Topic Name - " + topic);

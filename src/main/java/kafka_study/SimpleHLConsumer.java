@@ -9,6 +9,11 @@ import kafka.consumer.ConsumerIterator;
 import kafka.consumer.KafkaStream;
 import kafka.javaapi.consumer.ConsumerConnector;
 
+
+
+//java -cp kafka_study-0.0.1-SNAPSHOT-jar-with-dependencies.jar kafka_study.SimpleHLConsumer
+//it consumes all messages from all partitions because of no particular partition specified
+
 public class SimpleHLConsumer {
 	private final ConsumerConnector consumer;
 	private final String topic;
@@ -44,9 +49,9 @@ public class SimpleHLConsumer {
 	}
 
 	public static void main(String[] args) {
-		String zooKeeper = "jing-server-3:2181";
-		String groupId = "test-consumer-group";
-		String topic = "website-hits";
+		String zooKeeper = "pcdtckaf01d.emea1.cis.trcloud:2181,pcdtckaf02d.emea1.cis.trcloud:2181,pcdtckaf03d.emea1.cis.trcloud:2181";
+		String groupId = "streaming_test_group";
+		String topic = "streaming_test";
 		SimpleHLConsumer simpleHLConsumer = new SimpleHLConsumer(zooKeeper, groupId, topic);
 		simpleHLConsumer.testConsumer();
 	}
