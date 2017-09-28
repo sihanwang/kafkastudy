@@ -69,9 +69,9 @@ public class Consumer_test {
     }
  
     public static void main(String[] args) {
-        String zooKeeper = "dsj-s1:2181";
-        String groupId = "test";
-        String topic = "nifi_flow";
+        String zooKeeper = "dsj-s6:2181,dsj-s3:2181,dsj-s1:2181/kafka";
+        String groupId = "vessel_location";
+        String topic = "stream_group";
         int threads = 10;
  
         Consumer_test example = new Consumer_test(zooKeeper, groupId, topic);

@@ -70,9 +70,9 @@ public class MultiThreadHLConsumer {
 	}
 
 	public static void main(String[] args) {
-		String zooKeeper = "jing-server-3:2181";
-		String groupId = "test-consumer-group";
-		String topic = "testtopic";
+		String zooKeeper = "pcdtckaf01d.emea1.cis.trcloud:2181,pcdtckaf02d.emea1.cis.trcloud:2181,pcdtckaf03d.emea1.cis.trcloud:2181";
+		String groupId = "streaming_test_group";
+		String topic = "streaming_test";
 		int threadCount = 10;
 		MultiThreadHLConsumer multiThreadHLConsumer = new MultiThreadHLConsumer(zooKeeper, groupId, topic);
 		multiThreadHLConsumer.testMultiThreadConsumer(threadCount);

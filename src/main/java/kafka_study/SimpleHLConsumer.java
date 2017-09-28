@@ -49,9 +49,9 @@ public class SimpleHLConsumer {
 	}
 
 	public static void main(String[] args) {
-		String zooKeeper = "pcdtckaf01d.emea1.cis.trcloud:2181,pcdtckaf02d.emea1.cis.trcloud:2181,pcdtckaf03d.emea1.cis.trcloud:2181";
-		String groupId = "streaming_test_group";
-		String topic = "streaming_test";
+		String zooKeeper = "dsj-s6:2181,dsj-s3:2181,dsj-s1:2181/kafka";
+		String groupId = "stream_group";
+		String topic = "vessel_location";
 		SimpleHLConsumer simpleHLConsumer = new SimpleHLConsumer(zooKeeper, groupId, topic);
 		simpleHLConsumer.testConsumer();
 	}
